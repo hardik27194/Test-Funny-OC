@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRMakeViewController">
+            <connections>
+                <outlet property="QRImageView" destination="qRa-ff-hU3" id="7Vd-kg-yQS"/>
+                <outlet property="textView" destination="ZFc-RR-ByL" id="Jw0-pa-Qfi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFc-RR-ByL">
+                    <rect key="frame" x="20" y="95" width="335" height="150"/>
+                    <color key="backgroundColor" red="0.96643708881578949" green="0.87083675986842102" blue="0.57599198190789469" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="xEc-UP-s3Y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="vxx-6C-vjE"/>
+                    </connections>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入要生成二维码的文字" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K67-Ac-Sym">
+                    <rect key="frame" x="0.0" y="70" width="375" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="k8V-GI-cTu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qRa-ff-hU3">
+                    <rect key="frame" x="77" y="305" width="220" height="220"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="220" id="h57-yV-bNa"/>
+                        <constraint firstAttribute="height" constant="220" id="qK6-az-MWu"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZm-IG-uya">
+                    <rect key="frame" x="20" y="243" width="335" height="30"/>
+                    <color key="backgroundColor" white="0.68906763979999996" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZYH-6D-rRO"/>
+                    </constraints>
+                    <state key="normal" title="生成">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="makeQR:" destination="-1" eventType="touchUpInside" id="2ac-cr-bFJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="eZm-IG-uya" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="1Un-Tf-r3M"/>
+                <constraint firstItem="ZFc-RR-ByL" firstAttribute="top" secondItem="K67-Ac-Sym" secondAttribute="bottom" id="1hm-wP-ea0"/>
+                <constraint firstItem="eZm-IG-uya" firstAttribute="top" secondItem="ZFc-RR-ByL" secondAttribute="bottom" constant="-2" id="8Gl-8f-Slg"/>
+                <constraint firstItem="K67-Ac-Sym" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Iih-be-Hse"/>
+                <constraint firstAttribute="centerX" secondItem="qRa-ff-hU3" secondAttribute="centerX" constant="0.5" id="R7L-AE-Hqv"/>
+                <constraint firstItem="ZFc-RR-ByL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Xwq-um-W33"/>
+                <constraint firstItem="K67-Ac-Sym" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="dzC-jW-tCd"/>
+                <constraint firstItem="qRa-ff-hU3" firstAttribute="top" secondItem="ZFc-RR-ByL" secondAttribute="bottom" constant="60" id="e9k-LX-b8D"/>
+                <constraint firstAttribute="trailing" secondItem="ZFc-RR-ByL" secondAttribute="trailing" constant="20" id="oJE-bD-kY4"/>
+                <constraint firstAttribute="trailing" secondItem="K67-Ac-Sym" secondAttribute="trailing" id="ssZ-Mo-CJb"/>
+                <constraint firstAttribute="trailing" secondItem="eZm-IG-uya" secondAttribute="trailing" constant="20" id="zhE-y4-FUd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

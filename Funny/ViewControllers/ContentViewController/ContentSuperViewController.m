@@ -1,0 +1,51 @@
+//
+//  ContentSuperViewController.m
+//  Funny
+//
+//  Created by yanzhen on 15/9/28.
+//  Copyright (c) 2015年 yanzhen. All rights reserved.
+//
+
+#import "ContentSuperViewController.h"
+
+@interface ContentSuperViewController ()
+
+@end
+
+@implementation ContentSuperViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    [self superRefresh];
+    [self superOther];
+}
+
+- (void)superRefresh
+{
+    self.header=[YZRefreshHeaderView header];
+    self.footer=[YZRefreshFooterView footer];
+    self.header.scrollView=self.tableView;
+    self.footer.scrollView=self.tableView;
+    YZWeakSelf(self)
+    self.header.beginRefreshingBlock=^(YZRefreshBaseView *baseView){
+        [weakself netRequestWithRefresh:kPullRefresh baseView:baseView isHeaderRefresh:YES];
+    };
+    self.footer.beginRefreshingBlock=^(YZRefreshBaseView *baseView){
+        [weakself netRequestWithRefresh:kPushRefresh baseView:baseView isHeaderRefresh:NO];
+    };
+
+}
+- (void)superOther
+{
+    self.commentsArray = [[NSMutableArray alloc] initWithCapacity:0];
+    self.groupArray = [[NSMutableArray alloc] initWithCapacity:0];
+    [self netRequestWithRefresh:kNormalrefresh baseView:nil isHeaderRefresh:NO];
+}
+
+- (void)netRequestWithRefresh:(eRefresh)refresh baseView:(YZRefreshBaseView *)baseView isHeaderRefresh:(BOOL)end{
+    
+}
+
+@end

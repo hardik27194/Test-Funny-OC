@@ -1,0 +1,34 @@
+//
+//  Funny-Prefix.pch
+//  Funny
+//
+//  Created by yanzhen on 15/12/7.
+//  Copyright (c) 2015年 yanzhen. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "GeneralEnum.h"
+#import "NSObject+General.h"
+#import "FunnyModel.h"
+#import "Toast+UIView.h"
+#import "GlobalManage.h"
+#import "UIImageView+WebCache.h"
+#import "GlobalMacro.h"
+
+
+#ifdef DEBUG
+#define YZLog(format, ...) NSLog((format @"\n%s -- %d行\n%s"),##__VA_ARGS__,__func__,__LINE__,__FILE__)
+#else
+#define YZLog(format, ...)
+#endif
+
+
+#endif

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YZKeyboardTool">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWy-Gz-umX">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <items>
+                        <barButtonItem title="上一个" id="xyz-dC-zfi">
+                            <connections>
+                                <action selector="pre:" destination="iN0-l3-epB" id="7z5-QJ-fgt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="下一个" id="g2n-gb-122">
+                            <connections>
+                                <action selector="next:" destination="iN0-l3-epB" id="5ab-A2-f16"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="2fO-bF-FcB"/>
+                        <barButtonItem title="完成" id="ug8-pQ-ErO">
+                            <connections>
+                                <action selector="done:" destination="iN0-l3-epB" id="jfl-ow-r8e"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="qWy-Gz-umX" secondAttribute="bottom" id="OoG-HE-y1Z"/>
+                <constraint firstAttribute="trailing" secondItem="qWy-Gz-umX" secondAttribute="trailing" id="gvt-Ep-jBV"/>
+                <constraint firstItem="qWy-Gz-umX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qNI-gp-LiD"/>
+                <constraint firstItem="qWy-Gz-umX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wfE-Oj-26x"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
