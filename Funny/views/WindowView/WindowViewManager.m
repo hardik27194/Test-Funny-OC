@@ -128,7 +128,7 @@ MShareInstance(WindowViewManager)
     [self.windowView.progressView setProgress:0.0 animated:NO];
 }
 
-- (void)WillResignActive{
+- (void)didEnterBackground{
     if (self.player.rate || _isPlaying) {
         [self.player pause];
         _enterBackground = YES;
@@ -156,7 +156,7 @@ MShareInstance(WindowViewManager)
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playVideoEnd) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     [item addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
     //没考虑删除通知的情况
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(WillResignActive) name:UIApplicationWillResignActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
     
 }
