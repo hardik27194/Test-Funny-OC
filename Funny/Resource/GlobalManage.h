@@ -18,4 +18,5 @@ HShareInstance(GlobalManage);
 - (CGSize)labelSize:(NSString *)text font:(CGFloat)font width:(CGFloat)width;
 - (void)saveImage:(UIImage *)image;
 - (void)clearCache;
+- (float)cpu_usage;
 @end
