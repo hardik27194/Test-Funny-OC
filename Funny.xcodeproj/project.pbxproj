@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1F8BA61D828AE90047A1CB /* AboutSeetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F8BA51D828AE90047A1CB /* AboutSeetingsViewController.m */; };
 		9B350A981D264BD2009699DF /* YZRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9B350A8E1D264BD2009699DF /* YZRefresh.bundle */; };
 		9B350A991D264BD2009699DF /* YZRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B350A911D264BD2009699DF /* YZRefreshBaseView.m */; };
 		9B350A9A1D264BD2009699DF /* YZRefreshExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B350A931D264BD2009699DF /* YZRefreshExtend.m */; };
@@ -242,6 +243,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B1F8BA41D828AE90047A1CB /* AboutSeetingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSeetingsViewController.h; sourceTree = "<group>"; };
+		9B1F8BA51D828AE90047A1CB /* AboutSeetingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSeetingsViewController.m; sourceTree = "<group>"; };
 		9B350A8E1D264BD2009699DF /* YZRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YZRefresh.bundle; sourceTree = "<group>"; };
 		9B350A8F1D264BD2009699DF /* YZRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZRefresh.h; sourceTree = "<group>"; };
 		9B350A901D264BD2009699DF /* YZRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZRefreshBaseView.h; sourceTree = "<group>"; };
@@ -671,6 +674,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B1F8BA31D828AE90047A1CB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9B1F8BA41D828AE90047A1CB /* AboutSeetingsViewController.h */,
+				9B1F8BA51D828AE90047A1CB /* AboutSeetingsViewController.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		9B350A8B1D264BD2009699DF /* YZ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1001,6 +1013,7 @@
 		9BCE568D1D0284DA00B976DF /* AboutMyViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9B1F8BA31D828AE90047A1CB /* Settings */,
 				9BCE56971D0284DA00B976DF /* AboutMyViewController.h */,
 				9BCE56981D0284DA00B976DF /* AboutMyViewController.m */,
 				9BCE568E1D0284DA00B976DF /* AboutMyAboutViewController.h */,
@@ -1678,6 +1691,7 @@
 				9BCE57C51D0284DA00B976DF /* UIImage+WebP.m in Sources */,
 				9BCE58331D0284DA00B976DF /* WalfareSuperViewController.m in Sources */,
 				9BCE58621D0284DA00B976DF /* UCNewsPictureTableViewCell.m in Sources */,
+				9B1F8BA61D828AE90047A1CB /* AboutSeetingsViewController.m in Sources */,
 				9BCE57F81D0284DA00B976DF /* DrawPictureViewController.m in Sources */,
 				9BCE58191D0284DA00B976DF /* SecretLockViewController.m in Sources */,
 				9BCE57D71D0284DA00B976DF /* NSObject+General.m in Sources */,

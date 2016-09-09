@@ -10,10 +10,13 @@
 #import "AboutMyManagerViewController.h"
 #import "AboutMyDeclareViewController.h"
 #import "AboutMyAboutViewController.h"
+#import "AboutSeetingsViewController.h"
 #import "HomeBGViewController.h"
 #import "SDWebImageManager.h"
 
-#define AIS_HEIGHT 280.5
+static const CGFloat AIS_HEIGHT = 228.5;
+static const CGFloat ABOUT_ROWHEIGHT = 52.5;
+
 @interface AboutMyViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (strong, nonatomic) UIView *tableHeaderView;
 @property (nonatomic, strong) UIImageView *headerImageView;
@@ -78,7 +81,7 @@
         });
         return;
     }else{
-        NSArray *vcs = @[@"HomeBGViewController",@"AboutMyManagerViewController",@"AboutMyDeclareViewController",@"AboutMyAboutViewController"];
+        NSArray *vcs = @[@"HomeBGViewController",@"AboutMyManagerViewController",@"AboutSeetingsViewController",@"AboutMyDeclareViewController",@"AboutMyAboutViewController"];
         UIViewController *vc = [[NSClassFromString(vcs[indexPath.row - 1]) alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -173,9 +176,9 @@
 #pragma mark - UI
 - (void)confUI
 {
-    NSArray *array =[[NSArray alloc] initWithObjects:@"清除缓存",@"首页背景",@"管理员",@"声明",@"关于", nil];
+    NSArray *array =[[NSArray alloc] initWithObjects:@"清除缓存",@"首页背景",@"管理员",@"设置",@"声明",@"关于", nil];
     [self.dataSource addObjectsFromArray:array];
-    self.tableView.rowHeight = 52.5;
+    self.tableView.rowHeight = ABOUT_ROWHEIGHT;
     
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 60)];
     footerView.backgroundColor = [UIColor clearColor];
