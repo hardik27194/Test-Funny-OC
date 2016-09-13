@@ -7,6 +7,7 @@
 //
 
 #import "NoteLockViewController.h"
+#import <LocalAuthentication/LocalAuthentication.h>
 #import "NSObject+General.h"
 #import "NoteShowViewController.h"
 
@@ -44,7 +45,28 @@
     self.title=@"密码";
     _btnsArray=[[NSMutableArray alloc] init];
     [self confUI];
-    
+    LAContext *context = [[LAContext alloc] init];
+    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil]) {
+        
+        NoteShowViewController *vc=[[NoteShowViewController alloc] init];
+        YZWeakSelf(self)
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:NSLocalizedString(@"Use Touch ID to Login.", nil) reply:^(BOOL success, NSError * _Nullable error) {
+            if (success) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakself.navigationController pushViewController:vc animated:YES];
+                });
+            }else{
+                NSLog(@"TTTT:Fail");
+                if (error.code == kLAErrorUserFallback) {
+                    NSLog(@"User tapped Enter Password");
+                } else if (error.code == kLAErrorUserCancel) {
+                    NSLog(@"User tapped Cancel");
+                } else {
+                    NSLog(@"Authenticated failed.");
+                }
+            }
+        }];
+    }
 }
 - (void)confUI
 {

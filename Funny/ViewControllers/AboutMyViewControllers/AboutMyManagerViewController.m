@@ -7,6 +7,7 @@
 //
 
 #import "AboutMyManagerViewController.h"
+#import <LocalAuthentication/LocalAuthentication.h>
 #import "AboutManageFPViewController.h"
 #import "AboutManageMPViewController.h"
 #import "UserModifyPasswordViewController.h"
@@ -40,6 +41,30 @@
     _btnsArray=[[NSMutableArray alloc] init];
     self.title=@"密码管理";
     [self confUI];
+    
+    LAContext *context = [[LAContext alloc] init];
+    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil]) {
+        
+        AboutManageMPViewController *vc=[[AboutManageMPViewController alloc] init];
+        YZWeakSelf(self)
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:NSLocalizedString(@"Use Touch ID to Login.", nil) reply:^(BOOL success, NSError * _Nullable error) {
+            if (success) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakself.navigationController pushViewController:vc animated:YES];
+                });
+            }else{
+                NSLog(@"TTTT:Fail");
+                if (error.code == kLAErrorUserFallback) {
+                    NSLog(@"User tapped Enter Password");
+                } else if (error.code == kLAErrorUserCancel) {
+                    NSLog(@"User tapped Cancel");
+                } else {
+                    NSLog(@"Authenticated failed.");
+                }
+            }
+        }];
+    }
+
 }
 - (void)confUI
 {

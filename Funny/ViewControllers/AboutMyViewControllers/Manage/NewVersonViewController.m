@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"新版本说明";
-    _textView.text = @"1.3.1:部分页面引入了3DTouch的功能  1.3.7添加UIView XIB属性  1.3.8增加系统首页背景 2.2.1视频小窗口缩放";
+    _textView.text = @"1.3.1:部分页面引入了3DTouch的功能  1.3.7添加UIView XIB属性  1.3.8增加系统首页背景 2.2.1视频小窗口缩放 2.2.4Touch ID解锁";
 }
 
 - (NSArray<id<UIPreviewActionItem>> *)previewActionItems {

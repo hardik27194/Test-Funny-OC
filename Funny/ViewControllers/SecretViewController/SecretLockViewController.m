@@ -7,6 +7,7 @@
 //
 
 #import "SecretLockViewController.h"
+#import <LocalAuthentication/LocalAuthentication.h>
 #import "SecretPasswordViewController.h"
 #import "LockView.h"
 #import "MBProgressHUD+YZZ.h"
@@ -38,6 +39,29 @@
     // Do any additional setup after loading the view.
     self.title=@"解锁";
     _backGImageV.image = [UIImage imageNamedWithFunny:@"Home_refresh_bg"];
+    LAContext *context = [[LAContext alloc] init];
+    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil]) {
+        
+        SecretPasswordViewController *vc=[[SecretPasswordViewController alloc] init];
+        YZWeakSelf(self)
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:NSLocalizedString(@"Use Touch ID to Login.", nil) reply:^(BOOL success, NSError * _Nullable error) {
+            if (success) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakself.navigationController pushViewController:vc animated:YES];
+                });
+            }else{
+                NSLog(@"TTTT:Fail");
+                if (error.code == kLAErrorUserFallback) {
+                    NSLog(@"User tapped Enter Password");
+                } else if (error.code == kLAErrorUserCancel) {
+                    NSLog(@"User tapped Cancel");
+                } else {
+                    NSLog(@"Authenticated failed.");
+                }
+            }
+        }];
+    }
+
 }
 #pragma mark - notify Action
 - (void)login
