@@ -31,6 +31,7 @@
 }
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     _width=2;
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

@@ -7,7 +7,7 @@
 //
 
 #import "WindowView.h"
-#import "CALayerDelegate.h"
+#import "LayerDelegate.h"
 #import "WindowLoadingView.h"
 #import "AppDelegate.h"
 #import "VideoWindow.h"
@@ -19,7 +19,7 @@ static CGFloat const OtherHeight = TopLineHeight + 2;
 
 @property (nonatomic, weak) UIVisualEffectView *effectView;
 @property (nonatomic, strong) CALayer *yzLayer;
-@property (nonatomic, strong) CALayerDelegate *layerDelegate;
+@property (nonatomic, strong) LayerDelegate *layerDelegate;
 @property (nonatomic, weak) UIView *topLineView;
 @property (nonatomic, weak) UIView *yzView;
 @property (nonatomic, weak) UIButton *closeBtn;
@@ -102,7 +102,7 @@ static CGFloat const OtherHeight = TopLineHeight + 2;
     yzView.backgroundColor = [UIColor clearColor];
     _yzLayer = [CALayer layer];
     _yzLayer.backgroundColor = [UIColor clearColor].CGColor;
-    _layerDelegate = [[CALayerDelegate alloc] init];
+    _layerDelegate = [[LayerDelegate alloc] init];
     _layerDelegate.left = YES;
     _yzLayer.delegate = _layerDelegate;
     [yzView.layer addSublayer:_yzLayer];

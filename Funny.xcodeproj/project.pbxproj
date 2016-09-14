@@ -43,6 +43,7 @@
 		9B86C03F1D475C3400F29B35 /* WindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B86C03E1D475C3400F29B35 /* WindowView.m */; };
 		9B86C0421D475D3900F29B35 /* WindowViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B86C0411D475D3900F29B35 /* WindowViewManager.m */; };
 		9B86C08A1D4AF97500F29B35 /* WindowLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B86C0891D4AF97500F29B35 /* WindowLoadingView.m */; };
+		9BAA7FA91D893F7900F991DD /* LayerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA7FA81D893F7900F991DD /* LayerDelegate.m */; };
 		9BC873CB1D224B5D001B7DD9 /* SuperWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC873C91D224B5D001B7DD9 /* SuperWebViewController.m */; };
 		9BC873CC1D224B5D001B7DD9 /* SuperWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BC873CA1D224B5D001B7DD9 /* SuperWebViewController.xib */; };
 		9BC873CF1D224FCF001B7DD9 /* ContentWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC873CE1D224FCF001B7DD9 /* ContentWebViewController.m */; };
@@ -90,7 +91,6 @@
 		9BCE57CB1D0284DA00B976DF /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9BCE565E1D0284DA00B976DF /* read_me.txt */; };
 		9BCE57D11D0284DA00B976DF /* FunnyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE566F1D0284DA00B976DF /* FunnyModel.m */; };
 		9BCE57D31D0284DA00B976DF /* YZTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE56731D0284DA00B976DF /* YZTextField.m */; };
-		9BCE57D41D0284DA00B976DF /* CALayerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE56761D0284DA00B976DF /* CALayerDelegate.m */; };
 		9BCE57D51D0284DA00B976DF /* FunnyVideoPlayManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE56791D0284DA00B976DF /* FunnyVideoPlayManage.m */; };
 		9BCE57D61D0284DA00B976DF /* GlobalManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE567D1D0284DA00B976DF /* GlobalManage.m */; };
 		9BCE57D71D0284DA00B976DF /* NSObject+General.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE567F1D0284DA00B976DF /* NSObject+General.m */; };
@@ -311,6 +311,8 @@
 		9B86C0411D475D3900F29B35 /* WindowViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowViewManager.m; sourceTree = "<group>"; };
 		9B86C0881D4AF97500F29B35 /* WindowLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowLoadingView.h; sourceTree = "<group>"; };
 		9B86C0891D4AF97500F29B35 /* WindowLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowLoadingView.m; sourceTree = "<group>"; };
+		9BAA7FA71D893F7900F991DD /* LayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerDelegate.h; sourceTree = "<group>"; };
+		9BAA7FA81D893F7900F991DD /* LayerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerDelegate.m; sourceTree = "<group>"; };
 		9BC873C81D224B5D001B7DD9 /* SuperWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperWebViewController.h; sourceTree = "<group>"; };
 		9BC873C91D224B5D001B7DD9 /* SuperWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperWebViewController.m; sourceTree = "<group>"; };
 		9BC873CA1D224B5D001B7DD9 /* SuperWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuperWebViewController.xib; sourceTree = "<group>"; };
@@ -394,8 +396,6 @@
 		9BCE566F1D0284DA00B976DF /* FunnyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunnyModel.m; sourceTree = "<group>"; };
 		9BCE56721D0284DA00B976DF /* YZTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZTextField.h; sourceTree = "<group>"; };
 		9BCE56731D0284DA00B976DF /* YZTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZTextField.m; sourceTree = "<group>"; };
-		9BCE56751D0284DA00B976DF /* CALayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CALayerDelegate.h; sourceTree = "<group>"; };
-		9BCE56761D0284DA00B976DF /* CALayerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CALayerDelegate.m; sourceTree = "<group>"; };
 		9BCE56781D0284DA00B976DF /* FunnyVideoPlayManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunnyVideoPlayManage.h; sourceTree = "<group>"; };
 		9BCE56791D0284DA00B976DF /* FunnyVideoPlayManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunnyVideoPlayManage.m; sourceTree = "<group>"; };
 		9BCE567A1D0284DA00B976DF /* GeneralEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralEnum.h; sourceTree = "<group>"; };
@@ -954,8 +954,8 @@
 			children = (
 				9B35134E1D3640F1009699DF /* GlobalMacro.h */,
 				9B35134F1D3640F1009699DF /* GlobalMacro.m */,
-				9BCE56751D0284DA00B976DF /* CALayerDelegate.h */,
-				9BCE56761D0284DA00B976DF /* CALayerDelegate.m */,
+				9BAA7FA71D893F7900F991DD /* LayerDelegate.h */,
+				9BAA7FA81D893F7900F991DD /* LayerDelegate.m */,
 				9BCE56781D0284DA00B976DF /* FunnyVideoPlayManage.h */,
 				9BCE56791D0284DA00B976DF /* FunnyVideoPlayManage.m */,
 				9BCE567A1D0284DA00B976DF /* GeneralEnum.h */,
@@ -1532,7 +1532,7 @@
 		9BCE55B61D027C6F00B976DF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Y&Z";
 				TargetAttributes = {
 					9BCE55BD1D027C6F00B976DF = {
@@ -1729,13 +1729,13 @@
 				9BCE57BC1D0284DA00B976DF /* SDWebImageCompat.m in Sources */,
 				9BCE583C1D0284DA00B976DF /* ContentTextTableViewCell.m in Sources */,
 				9B6D8BE11D3769B3001976BE /* WalfareMacro.m in Sources */,
-				9BCE57D41D0284DA00B976DF /* CALayerDelegate.m in Sources */,
 				9BCE58121D0284DA00B976DF /* QRScanningViewController.m in Sources */,
 				9B6D8BEA1D3770A3001976BE /* SinaMacro.m in Sources */,
 				9BCE57F51D0284DA00B976DF /* ContentTabBarViewController.m in Sources */,
 				9BCE58351D0284DA00B976DF /* WalfareTextViewController.m in Sources */,
 				9BCE57E71D0284DA00B976DF /* AboutManageMPViewController.m in Sources */,
 				9BCE57BA1D0284DA00B976DF /* NSData+ImageContentType.m in Sources */,
+				9BAA7FA91D893F7900F991DD /* LayerDelegate.m in Sources */,
 				9BCE58511D0284DA00B976DF /* SinaPictureTableViewCell.m in Sources */,
 				9BCE583F1D0284DA00B976DF /* DrawPictureImageView.m in Sources */,
 				9BCE57BD1D0284DA00B976DF /* SDWebImageDecoder.m in Sources */,
@@ -1846,8 +1846,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1890,8 +1892,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

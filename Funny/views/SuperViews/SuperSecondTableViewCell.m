@@ -11,6 +11,7 @@
 @implementation SuperSecondTableViewCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 

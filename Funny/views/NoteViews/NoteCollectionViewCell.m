@@ -18,6 +18,7 @@
 @implementation NoteCollectionViewCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
     [_deleteBtn setBackgroundImage:[UIImage imageNamedWithFunny:@"Delete"] forState:UIControlStateNormal];
     UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];

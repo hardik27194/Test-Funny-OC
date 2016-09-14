@@ -9,7 +9,7 @@
 #import "FunnyVideoPlayManage.h"
 #import "FunnyVideoTableViewCell.h"
 #import <AVFoundation/AVFoundation.h>
-#import "CALayerDelegate.h"
+#import "LayerDelegate.h"
 
 @interface FunnyVideoPlayManage ()
 @property (nonatomic, strong) AVPlayerLayer *playerLayer;
@@ -19,7 +19,7 @@
 @property (nonatomic, assign) BOOL isPlayEnd;
 @property (nonatomic, assign) BOOL enterBackground;
 @property (nonatomic, weak) FunnyVideoTableViewCell *videoCell;
-@property (nonatomic, strong) CALayerDelegate *layerDelegate;
+@property (nonatomic, strong) LayerDelegate *layerDelegate;
 
 @end
 
@@ -170,9 +170,9 @@ MShareInstance(VideoManage);
     return self.player.currentTime;
 }
 
--(CALayerDelegate *)layerDelegate{
+-(LayerDelegate *)layerDelegate{
     if (!_layerDelegate) {
-        _layerDelegate = [[CALayerDelegate alloc] init];
+        _layerDelegate = [[LayerDelegate alloc] init];
     }
     return _layerDelegate;
 }

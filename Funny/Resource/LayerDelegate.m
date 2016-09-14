@@ -1,14 +1,14 @@
 //
-//  CALayerDelegate.m
+//  LayerDelegate.m
 //  Funny
 //
-//  Created by yanzhen on 16/4/14.
-//  Copyright © 2016年 yanzhen. All rights reserved.
+//  Created by yanzhen on 16/9/14.
+//  Copyright © 2016年 Y&Z. All rights reserved.
 //
 
-#import "CALayerDelegate.h"
+#import "LayerDelegate.h"
 
-@implementation CALayerDelegate
+@implementation LayerDelegate
 - (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
     //CGContextSetFillColorWithColor(ctx, [[UIColor greenColor] CGColor]);
     UIGraphicsPushContext(ctx);
@@ -33,5 +33,4 @@
     //可以去掉（？？？？？）
     UIGraphicsPopContext();
 }
-
 @end
