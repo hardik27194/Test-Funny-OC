@@ -1001,11 +1001,11 @@
 				9BCE56CC1D0284DA00B976DF /* NetEaseViewControllers */,
 				9BCE57061D0284DA00B976DF /* SinaNewsViewControllers */,
 				9BCE57131D0284DA00B976DF /* SinaVideoViewControllers */,
-				9BCE568D1D0284DA00B976DF /* AboutMyViewControllers */,
 				9BCE56BF1D0284DA00B976DF /* DrawPictureViewControllers */,
 				9BCE56DB1D0284DA00B976DF /* NoteViewControllers */,
 				9BCE56EB1D0284DA00B976DF /* QRCodeViewControllers */,
 				9BCE56F81D0284DA00B976DF /* SecretViewController */,
+				9BCE568D1D0284DA00B976DF /* AboutMyViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

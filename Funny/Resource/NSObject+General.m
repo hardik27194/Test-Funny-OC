@@ -263,6 +263,7 @@ void MyCGPathApplierFunc (void *info, const CGPathElement *element) {
 
 - (void)corner
 {
+    [self layoutIfNeeded];
     self.layer.masksToBounds=YES;
     self.layer.cornerRadius=self.frame.size.width/2;
 }

@@ -22,7 +22,7 @@ static const CGFloat SETTINGS_SECTIONHEIGHTERH = 10.0;
     self.tableView.rowHeight = SETTINGS_ROWHEIGHT;
     self.tableView.backgroundColor = YZColor(230, 230, 237);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    NSArray *items = @[@[@"隐私设置"],@[@"打开WIFI"],@[@"打开移动网络"]];
+    NSArray *items = @[@[@"隐私设置"]];
     [self.dataSource addObjectsFromArray:items];
 }
 #pragma mark - TableView
@@ -59,7 +59,8 @@ static const CGFloat SETTINGS_SECTIONHEIGHTERH = 10.0;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSArray *array = @[UIApplicationOpenSettingsURLString,@"prefs:root=WIFI",@"prefs:root=MOBILE_DATA_SETTINGS_ID"];
+    //@"prefs:root=WIFI",@"prefs:root=MOBILE_DATA_SETTINGS_ID"
+    NSArray *array = @[UIApplicationOpenSettingsURLString];
     NSURL *url = [NSURL URLWithString:array[indexPath.section]];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
