@@ -1080,12 +1080,12 @@
 		9BCE56B21D0284DA00B976DF /* ContentViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9BCE56BB1D0284DA00B976DF /* ContentTextViewController.h */,
+				9BCE56BC1D0284DA00B976DF /* ContentTextViewController.m */,
 				9BCE56B31D0284DA00B976DF /* ContentPictureViewController.h */,
 				9BCE56B41D0284DA00B976DF /* ContentPictureViewController.m */,
 				9BCE56B51D0284DA00B976DF /* ContentRecommendViewController.h */,
 				9BCE56B61D0284DA00B976DF /* ContentRecommendViewController.m */,
-				9BCE56BB1D0284DA00B976DF /* ContentTextViewController.h */,
-				9BCE56BC1D0284DA00B976DF /* ContentTextViewController.m */,
 				9BCE56BD1D0284DA00B976DF /* ContentVideoViewController.h */,
 				9BCE56BE1D0284DA00B976DF /* ContentVideoViewController.m */,
 				9BCE56B71D0284DA00B976DF /* ContentSuperViewController.h */,

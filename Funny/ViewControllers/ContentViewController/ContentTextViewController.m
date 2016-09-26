@@ -113,14 +113,6 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self textCell:tableView indexPath:indexPath];
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self textCell:tableView indexPath:indexPath].rowHeight;
-}
-
-- (ContentTextTableViewCell *)textCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
     ContentTextTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"ContextTextCell"];
     if (!cell) {
         cell=[[ContentTextTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ContextTextCell"];
@@ -134,6 +126,7 @@
     }else{
         cell.smallView.hidden=YES;
     }
+    [self.rowHeightData setObject:@(cell.rowHeight) forKey:indexPath];
     return cell;
 }
 

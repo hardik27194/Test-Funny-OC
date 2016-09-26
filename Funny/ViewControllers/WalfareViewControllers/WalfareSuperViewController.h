@@ -9,6 +9,8 @@
 #import "SuperThirdViewController.h"
 
 @interface WalfareSuperViewController :SuperThirdViewController
+
+@property (nonatomic, strong) NSMutableDictionary *rowHeightData;
 @property (copy, nonatomic) NSString *defaultURL;
 @property (copy, nonatomic) NSString *defaultFootURL;
 @property (copy, nonatomic) NSString *defaultPushMiddleURL;

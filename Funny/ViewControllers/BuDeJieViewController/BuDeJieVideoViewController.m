@@ -73,15 +73,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self videoCell:tableView indexPtah:indexPath];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self videoCell:tableView indexPtah:indexPath].rowHeight;
-}
-
-- (BuDeJieVideoTableViewCell1 *)videoCell:(UITableView *)tableView indexPtah:(NSIndexPath *)indexPath{
     BuDeJieVideoTableViewCell1 *cell=[tableView dequeueReusableCellWithIdentifier:@"BuDeJieVideoCell"];
     if (!cell) {
         cell=[[BuDeJieVideoTableViewCell1 alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BuDeJieVideoCell"];
@@ -93,8 +84,8 @@
         [[FunnyVideoPlayManage shareVideoManage] tableViewReload];
         cell.playBtn.selected = NO;
     }
+    [self.rowHeightData setObject:@(cell.rowHeight) forKey:indexPath];
     return cell;
-    
 }
 
 #pragma mark - play-Action

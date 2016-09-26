@@ -65,24 +65,18 @@
     return self.dataSource.count;
 }
 
-- (BuDEJieTextTableViewCell1 *)textCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     BuDEJieTextTableViewCell1 *cell=[tableView dequeueReusableCellWithIdentifier:@"BuDeJieTextCell"];
     if (!cell) {
         cell=[[BuDEJieTextTableViewCell1 alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BuDeJieTextCell"];
     }
     BuDeJieTextModel *model=self.dataSource[indexPath.row];
     cell.model=model;
+    [self.rowHeightData setObject:@(cell.rowHeight) forKey:indexPath];
     return cell;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self textCell:tableView indexPath:indexPath];
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self textCell:tableView indexPath:indexPath].rowHeight;
-}
 #pragma mark - tableView delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

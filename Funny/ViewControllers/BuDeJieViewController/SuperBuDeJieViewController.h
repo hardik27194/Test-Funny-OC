@@ -12,6 +12,7 @@
 @interface SuperBuDeJieViewController : SuperThirdViewController<UITableViewDataSource,UITableViewDelegate>
 @property (copy, nonatomic) NSString *maxid;
 @property (copy, nonatomic) NSString *maxtime;
+@property (nonatomic, strong) NSMutableDictionary *rowHeightData;
 
 - (void)budejieSuperRefresh;
 - (void)budejieSuperNetRequest;

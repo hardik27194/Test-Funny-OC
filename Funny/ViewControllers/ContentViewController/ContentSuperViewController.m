@@ -41,6 +41,7 @@
 {
     self.commentsArray = [[NSMutableArray alloc] initWithCapacity:0];
     self.groupArray = [[NSMutableArray alloc] initWithCapacity:0];
+    self.rowHeightData = [[NSMutableDictionary alloc] init];
     [self netRequestWithRefresh:kNormalrefresh baseView:nil isHeaderRefresh:NO];
 }
 
@@ -48,4 +49,10 @@
     
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSNumber *rowHeight = [self.rowHeightData objectForKey:indexPath];
+    return rowHeight.floatValue;
+}
 @end

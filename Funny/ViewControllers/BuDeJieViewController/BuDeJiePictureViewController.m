@@ -65,22 +65,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self pictureCell:tableView indexPath:indexPath];
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self pictureCell:tableView indexPath:indexPath].rowHeight;
-}
-
-- (BuDeJiePicturesTableViewCell *)pictureCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
     BuDeJiePicturesTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"BuDeJiePictureCell"];
     if (!cell) {
         cell=[[BuDeJiePicturesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BuDeJiePictureCell"];
     }
     BuDeJiePictureModel *model=self.dataSource[indexPath.row];
     cell.model=model;
+    [self.rowHeightData setObject:@(cell.rowHeight) forKey:indexPath];
     return cell;
 }
+
 #pragma mark - URL
 - (NSString *)urlStringWithRefresh:(eRefresh)refresh
 {

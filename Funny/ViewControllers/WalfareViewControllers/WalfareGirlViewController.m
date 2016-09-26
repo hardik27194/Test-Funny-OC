@@ -67,20 +67,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self girlCell:tableView indexPath:indexPath];
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self girlCell:tableView indexPath:indexPath].rowHeight;
-}
-
-- (WalfareGirlsTableViewCell *)girlCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
     WalfareGirlsTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"WalfareGirlCell"];
     if (!cell) {
         cell=[[WalfareGirlsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"WalfareGirlCell"];
     }
     WalfareGirlModel *model=self.dataSource[indexPath.row];
     cell.model=model;
+    [self.rowHeightData setObject:@(cell.rowHeight) forKey:indexPath];
     return cell;
 }
 

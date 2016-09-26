@@ -65,21 +65,15 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self textCell:tableView indexPath:indexPath];
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self textCell:tableView indexPath:indexPath].rowHeight;
-}
-
-- (WalfareTextTableViewCell1 *)textCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
     WalfareTextTableViewCell1 *cell=[tableView dequeueReusableCellWithIdentifier:@"WalfareTextCell"];
     if (!cell) {
         cell=[[WalfareTextTableViewCell1 alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"WalfareTextCell"];
     }
     WalfareTextModel *model=self.dataSource[indexPath.row];
     cell.model=model;
+    [self.rowHeightData setObject:@(cell.rowHeight) forKey:indexPath];
     return cell;
 }
+
 
 @end

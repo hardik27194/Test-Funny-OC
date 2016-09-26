@@ -132,15 +132,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self recommendCell:tableView indexPath:indexPath];
-    
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self recommendCell:tableView indexPath:indexPath].rowHeight;
-}
-
-- (ContentVideoTableViewCell1 *)recommendCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
     ContentVideoTableViewCell1 * cell = [tableView dequeueReusableCellWithIdentifier:@"ContentVideoCell"];
     if (!cell) {
         cell=[[ContentVideoTableViewCell1 alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ContentVideoCell"];
@@ -160,6 +151,7 @@
         cell.smallView.hidden=NO;
         cell.commentModel=model;
     }
+    [self.rowHeightData setObject:@(cell.rowHeight) forKey:indexPath];
     return cell;
     
 }

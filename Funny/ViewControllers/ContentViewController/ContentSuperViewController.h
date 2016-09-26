@@ -12,6 +12,7 @@
 #import "ContentMacro.h"
 
 @interface ContentSuperViewController : SuperThirdViewController
+@property (nonatomic, strong) NSMutableDictionary *rowHeightData;
 @property (nonatomic, strong) NSMutableArray *commentsArray;
 @property (nonatomic, strong) NSMutableArray *groupArray;
 @property (assign, nonatomic) CGFloat rowHeight;

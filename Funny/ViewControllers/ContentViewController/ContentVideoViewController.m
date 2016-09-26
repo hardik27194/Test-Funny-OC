@@ -128,20 +128,11 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self videoCell:tableView indexPath:indexPath];
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self videoCell:tableView indexPath:indexPath].rowHeight;
-}
-- (ContentVideoTableViewCell1 *)videoCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
     ContentVideoTableViewCell1 *cell=[tableView dequeueReusableCellWithIdentifier:@"ContentVideoCell"];
     if (!cell) {
         cell=[[ContentVideoTableViewCell1 alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ContentVideoCell"];
+        cell.delegate=self;
     }
-    
-    cell.delegate=self;
-    cell.playBtn.tag=100+indexPath.row;
     if (cell.refresh) {
         [[FunnyVideoPlayManage shareVideoManage] tableViewReload];
         cell.playBtn.selected = NO;
@@ -156,9 +147,10 @@
         cell.smallView.hidden = NO;
         cell.commentModel=model;
     }
+    [self.rowHeightData setObject:@(cell.rowHeight) forKey:indexPath];
     return cell;
-
 }
+
 #pragma mark - tableView delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -186,5 +178,4 @@
     [[FunnyVideoPlayManage shareVideoManage] tableViewReload];
     [[WindowViewManager shareWindowViewManager] videoPlayCurrentTime:[FunnyVideoPlayManage shareVideoManage].currentTime videoUrlString:model.url];
 }
-
 @end

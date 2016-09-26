@@ -12,6 +12,7 @@
 @interface WhatSomePictureViewController ()
 @property (strong, nonatomic) NSNumber *max_time;
 @property (strong, nonatomic) NSNumber *min_time;
+@property (nonatomic, strong) NSMutableDictionary *rowHeightData;
 @end
 
 @implementation WhatSomePictureViewController
@@ -19,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _rowHeightData = [[NSMutableDictionary alloc] init];
     
 }
 #pragma mark - net
@@ -90,21 +92,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self gifShowCell:tableView indexPath:indexPath];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self gifShowCell:tableView indexPath:indexPath].rowHeight;
-}
-
-- (GifShowPicturesTableViewCell *)gifShowCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
     GifShowPicturesTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"SomeWhatPictureCell"];
     if (!cell) {
         cell=[[GifShowPicturesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SomeWhatPictureCell"];
     }
     SomeWhatPictureModel *model=self.dataSource[indexPath.row];
     cell.model=model;
+    //可以绑定在model上面
+    [self.rowHeightData setObject:@(cell.rowHeight) forKey:indexPath];
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSNumber *rowHeight = [self.rowHeightData objectForKey:indexPath];
+    return rowHeight.floatValue;
+}
+
+
 @end

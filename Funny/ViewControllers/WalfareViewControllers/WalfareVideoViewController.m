@@ -75,15 +75,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self videoCell:tableView indexPath:indexPath];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self videoCell:tableView indexPath:indexPath].rowHeight;
-}
-
-- (WalfareVideoTableViewCell1 *)videoCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
     WalfareVideoTableViewCell1 *cell=[tableView dequeueReusableCellWithIdentifier:@"WalfareVideoCell"];
     if (!cell) {
         cell=[[WalfareVideoTableViewCell1 alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"WalfareVideoCell"];
@@ -95,9 +86,9 @@
         [[FunnyVideoPlayManage shareVideoManage] tableViewReload];
         cell.playBtn.selected = NO;
     }
+    [self.rowHeightData setObject:@(cell.rowHeight) forKey:indexPath];
     return cell;
 }
-
 #pragma mark - playButtonClick
 
 -(void)videoPlay:(BOOL)play videoCell:(FunnyVideoTableViewCell *)videoCell{

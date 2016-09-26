@@ -115,7 +115,9 @@
     return array.count;
 }
 
-- (ContentPicturesTableViewCell *)pictureCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     ContentPicturesTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"ContentPictureCell"];
     if (!cell) {
         cell=[[ContentPicturesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ContentPictureCell"];
@@ -130,18 +132,10 @@
         cell.smallView.hidden=NO;
         cell.commentModel=model;
     }
+    [self.rowHeightData setObject:@(cell.rowHeight) forKey:indexPath];
     return cell;
-
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self pictureCell:tableView indexPath:indexPath];
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self pictureCell:tableView indexPath:indexPath].rowHeight;
-}
 #pragma mark - tableView delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

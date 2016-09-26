@@ -16,6 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _rowHeightData = [[NSMutableDictionary alloc] init];
     [self refreshSuper];
     [self walfareNetRequest];
 }
@@ -61,4 +62,11 @@
 {
     
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSNumber *rowHeight = [self.rowHeightData objectForKey:indexPath];
+    return rowHeight.floatValue;
+}
+
 @end
