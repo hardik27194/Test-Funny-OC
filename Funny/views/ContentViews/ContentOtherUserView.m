@@ -59,7 +59,7 @@
 -(void)smallViewWithOriginY:(CGFloat)originY headImageViewUrlString:(NSString *)userHeadUrlString name:(NSString *)name text:(NSString *)text{
     self.y = originY;
     
-    UIImage *image = [UIImage imageNamedWithHZW:@"大熊_2"];
+    UIImage *image = [UIImage imageNamed:@"Y&Z"];
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:userHeadUrlString] placeholderImage:image];
     self.userNameLabel.text = name;
     self.userTextLabel.text = text;

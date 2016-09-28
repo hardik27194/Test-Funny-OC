@@ -22,7 +22,7 @@
     _accountLabel.text=[account stringByAppendingString:model.account];
     NSString *password=[model.password stringByAppendingString:@"    "];
     _passwordLabel.text=[password stringByAppendingString:model.remarks];
-    UIImage *image=[[UIImage imageNamedWithHZW:@"大熊_2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image=[[UIImage imageNamed:@"Y&Z"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [_headImageView corner];
     _headImageView.image=image;
 }

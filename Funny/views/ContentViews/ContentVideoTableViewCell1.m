@@ -27,7 +27,7 @@
     }
     self.shareURL = groupModel.url;
     self.shareTitle = groupModel.text;
-    UIImage *image = [UIImage imageNamedWithHZW:@"大熊_1"];
+    UIImage *image = [UIImage imageNamed:@"Y&Z"];
     CGFloat originW = groupModel.width.longLongValue ? groupModel.width.longValue : 1;
     CGFloat originH = groupModel.height.longLongValue;
     CGFloat scale   = (WIDTH - 20.0) / originW;

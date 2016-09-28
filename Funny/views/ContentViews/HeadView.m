@@ -48,7 +48,7 @@
 }
 
 -(void)headViewWithheadImageUrlString:(NSString *)headImageUrlString name:(NSString *)name time:(long long)time{
-    UIImage *image = [UIImage imageNamedWithHZW:@"大熊_2"];
+    UIImage *image = [UIImage imageNamed:@"Y&Z"];
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:headImageUrlString] placeholderImage:image];
     self.userNameLabel.text = name;
     self.creatTimeLabel.text = [NSString dateWithTimeInterval:time];

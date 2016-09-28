@@ -53,6 +53,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSNumber *rowHeight = [self.rowHeightData objectForKey:indexPath];
-    return rowHeight.floatValue;
+    //当rowHeightData没有数据时，结果为0，如果返回0的话就会开辟数组数量的空间
+    return rowHeight.floatValue > 0 ? rowHeight.floatValue : HEIGHT;
 }
 @end

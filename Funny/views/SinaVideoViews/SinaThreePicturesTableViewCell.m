@@ -23,7 +23,7 @@
 -(void)setModel:(SinaNewsModel *)model
 {
     _model=model;
-    UIImage *image=[[UIImage imageNamedWithHZW:@"small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image=[[UIImage imageNamed:@"Y&Z"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     _titleLab.text=model.title;
     NSArray *listArray=model.pics[@"list"];
     NSString *imageAddresss1=listArray[0][@"kpic"];

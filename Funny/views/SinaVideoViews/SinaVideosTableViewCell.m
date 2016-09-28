@@ -58,7 +58,7 @@
 -(void)setModel:(SinaVideoModel *)model
 {
     _model=model;
-    UIImage *image=[[UIImage imageNamedWithHZW:@"大熊_1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image=[[UIImage imageNamed:@"Y&Z"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [_mainImageView sd_setImageWithURL:[NSURL URLWithString:model.kpic] placeholderImage:image];
     _titleLab.text=model.title;
 }

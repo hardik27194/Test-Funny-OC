@@ -88,11 +88,11 @@ MShareInstance(GlobalManage);
 
 #pragma mark - saveImage
 -(UIImage *)headImage{
-    return [UIImage imageNamedWithHZW:@"大熊_2"];
+    return [UIImage imageNamed:@"Y&Z"];
 }
 
 -(UIImage *)bigImage{
-    return [UIImage imageNamedWithHZW:@"大熊_1"];
+    return [UIImage imageNamed:@"Y&Z"];
 }
 
 -(void)saveImage:(UIImage *)image{

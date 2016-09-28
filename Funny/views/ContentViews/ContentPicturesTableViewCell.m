@@ -42,7 +42,7 @@
     self.mainTextLabel.text = groupModel.text;
     self.mainTextLabel.frame = CGRectMake(15.0, 65.0, WIDTH - 25, newSize.height);
     
-    UIImage *image = [UIImage imageNamedWithHZW:@"大熊_1"];
+    UIImage *image = [UIImage imageNamed:@"Y&Z"];
     CGFloat originW = groupModel.r_width.longLongValue ? groupModel.r_width.longLongValue : 1;
     CGFloat originH = groupModel.r_height.longLongValue;
     CGFloat scale   = (WIDTH - 20.0) / originW;

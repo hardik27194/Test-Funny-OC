@@ -49,7 +49,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSNumber *rowHeight = [self.rowHeightData objectForKey:indexPath];
-    return rowHeight.floatValue;
+    return rowHeight.floatValue > 0 ? rowHeight.floatValue : HEIGHT;
 
 }
 @end

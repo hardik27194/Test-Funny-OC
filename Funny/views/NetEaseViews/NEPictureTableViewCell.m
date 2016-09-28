@@ -20,7 +20,7 @@
 -(void)setModel:(NetEaseDefaultModel *)model
 {
     _model=model;
-    UIImage *image=[[UIImage imageNamedWithHZW:@"small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image=[[UIImage imageNamed:@"Y&Z"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     _titleLab.text=model.title;
     _subTitleLabel.text=model.digest;
     [_onlyImageView sd_setImageWithURL:[NSURL URLWithString:model.imgsrc] placeholderImage:image];

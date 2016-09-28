@@ -35,7 +35,7 @@
     bottomString=[bottomString stringByAppendingString:model.origin_src_name];
     _bottomLabel.text=bottomString;
     //
-    UIImage *image=[[UIImage imageNamedWithHZW:@"small"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image=[[UIImage imageNamed:@"Y&Z"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     NSArray *array=model.thumbnails;
     NSDictionary *dict1=array[0];
     [_onlyImageView sd_setImageWithURL:[NSURL URLWithString:dict1[@"url"]] placeholderImage:image];
