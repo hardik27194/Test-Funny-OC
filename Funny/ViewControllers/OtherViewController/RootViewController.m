@@ -55,12 +55,11 @@
         IconButton *button = [IconButton buttonWithType:UIButtonTypeSystem];
         button.frame=CGRectMake(spaceX+(spaceX+60)*x, 64+20+100*y, 60, 90);
         button.tag=100+i;
-        UIImage *image = [[UIImage imageNamedWithHZW:self.imagesNameArray[i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *image = [[UIImage imageNamed:self.imagesNameArray[i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         [button setImage:image forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:self.titleArray[i] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        button.titleLabel.font = [UIFont systemFontOfSize:13];
         [_scrollView addSubview:button];
     }
 }
@@ -141,7 +140,7 @@
 
 -(NSArray *)imagesNameArray{
     if (!_imagesNameArray) {
-        _imagesNameArray=[[NSArray alloc]initWithObjects:@"艾斯",@"鹰眼",@"女帝",@"黑胡子",@"明哥",@"山治",@"布鲁克",@"娜美",@"白胡子_logo",@"乔巴",@"索隆",@"罗宾", nil];
+        _imagesNameArray=[[NSArray alloc]initWithObjects:@"content",@"gifShow",@"budejie",@"walfare",@"uc",@"netease",@"sina",@"sina",@"secret",@"drawPicture",@"note",@"QR", nil];
     }
     return _imagesNameArray;
 }

@@ -15,8 +15,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.imageView.layer.masksToBounds = YES;
-        self.imageView.layer.cornerRadius = 8;
-        self.titleLabel.font = [UIFont systemFontOfSize:14];
+        self.imageView.layer.cornerRadius = 12;
+        self.titleLabel.font = [UIFont systemFontOfSize:12];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
     }
     return self;
