@@ -78,6 +78,33 @@
     return [_reachability currentReachabilityStatus];
 }
 
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    if ([url.scheme isEqualToString:@"BCYZ"]) {
+        NSArray *subString = [url.absoluteString componentsSeparatedByString:@"//"];
+        NSString *tagString = subString[1];
+        UINavigationController *rootVC = (UINavigationController *)self.window.rootViewController;
+        RootViewController *vc = rootVC.viewControllers.firstObject;
+        //只考虑push和present一级的情况
+        if (rootVC.presentedViewController) {
+            [rootVC.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+        }else if (rootVC.viewControllers.count > 1){
+            [rootVC popToRootViewControllerAnimated:YES];
+        }
+        if (tagString.integerValue >= 100 && tagString.integerValue <= 102) {
+            
+            NSInteger tag = tagString.integerValue;
+            if (tag == 102) {
+                tag = 110;
+            }
+            [vc selectedBtn:tag];
+        }else{
+            QRStartScanningVC *vc = [[QRStartScanningVC alloc] initWith3DTouch:YES];
+            [self.window.rootViewController presentViewController:vc animated:YES completion:nil];
+        }
+    }
+    return YES;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
