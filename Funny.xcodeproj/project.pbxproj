@@ -47,6 +47,8 @@
 		9B86C03F1D475C3400F29B35 /* WindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B86C03E1D475C3400F29B35 /* WindowView.m */; };
 		9B86C0421D475D3900F29B35 /* WindowViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B86C0411D475D3900F29B35 /* WindowViewManager.m */; };
 		9B86C08A1D4AF97500F29B35 /* WindowLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B86C0891D4AF97500F29B35 /* WindowLoadingView.m */; };
+		9B8A325C1DB5FBF4001E8512 /* YZCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A325A1DB5FBF4001E8512 /* YZCircleView.m */; };
+		9B8A325D1DB5FBF4001E8512 /* YZIPhoneDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8A325B1DB5FBF4001E8512 /* YZIPhoneDevice.framework */; };
 		9BAA7FA91D893F7900F991DD /* LayerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA7FA81D893F7900F991DD /* LayerDelegate.m */; };
 		9BB1540D1DADCD240091CC7A /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB1540C1DADCD240091CC7A /* Image.xcassets */; };
 		9BC873CB1D224B5D001B7DD9 /* SuperWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC873C91D224B5D001B7DD9 /* SuperWebViewController.m */; };
@@ -344,6 +346,9 @@
 		9B86C0411D475D3900F29B35 /* WindowViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowViewManager.m; sourceTree = "<group>"; };
 		9B86C0881D4AF97500F29B35 /* WindowLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowLoadingView.h; sourceTree = "<group>"; };
 		9B86C0891D4AF97500F29B35 /* WindowLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowLoadingView.m; sourceTree = "<group>"; };
+		9B8A32591DB5FBF4001E8512 /* YZCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZCircleView.h; sourceTree = "<group>"; };
+		9B8A325A1DB5FBF4001E8512 /* YZCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZCircleView.m; sourceTree = "<group>"; };
+		9B8A325B1DB5FBF4001E8512 /* YZIPhoneDevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YZIPhoneDevice.framework; path = Today/YZIPhoneDevice.framework; sourceTree = "<group>"; };
 		9BAA7FA71D893F7900F991DD /* LayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerDelegate.h; sourceTree = "<group>"; };
 		9BAA7FA81D893F7900F991DD /* LayerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerDelegate.m; sourceTree = "<group>"; };
 		9BB1540C1DADCD240091CC7A /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
@@ -673,6 +678,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8A325D1DB5FBF4001E8512 /* YZIPhoneDevice.framework in Frameworks */,
 				9B4116B11DADCA8E0058B895 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -754,6 +760,7 @@
 		9B4116AF1DADCA8D0058B895 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B8A325B1DB5FBF4001E8512 /* YZIPhoneDevice.framework */,
 				9B4116B01DADCA8D0058B895 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -764,6 +771,8 @@
 			children = (
 				9B4116B31DADCA8E0058B895 /* TodayViewController.h */,
 				9B4116B41DADCA8E0058B895 /* TodayViewController.m */,
+				9B8A32591DB5FBF4001E8512 /* YZCircleView.h */,
+				9B8A325A1DB5FBF4001E8512 /* YZCircleView.m */,
 				9B4116C11DADCADA0058B895 /* ExtensionButton.h */,
 				9B4116C21DADCADA0058B895 /* ExtensionButton.m */,
 				9B4116B91DADCA8E0058B895 /* Info.plist */,
@@ -1737,6 +1746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8A325C1DB5FBF4001E8512 /* YZCircleView.m in Sources */,
 				9B4116B51DADCA8E0058B895 /* TodayViewController.m in Sources */,
 				9B4116C31DADCADA0058B895 /* ExtensionButton.m in Sources */,
 			);
@@ -1953,6 +1963,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = M7R5TQ8AQY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Today",
+				);
 				INFOPLIST_FILE = Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1970,6 +1984,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = M7R5TQ8AQY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Today",
+				);
 				INFOPLIST_FILE = Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

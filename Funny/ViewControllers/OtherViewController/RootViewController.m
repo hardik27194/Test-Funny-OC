@@ -21,6 +21,21 @@
 
 @implementation RootViewController
 
+static NSString *AppNameVC[] = {
+    [kApp_Content]         = @"ContentTabBarViewController",
+    [kApp_GifShow]         = @"GifShowTabBarViewController",
+    [kApp_BuDeJie]         = @"BuDeJieTabBarViewController",
+    [kApp_Walfare]         = @"WalfareTabBarViewController",
+    [kApp_UCNews]          = @"UCNewsTabBarViewController",
+    [kApp_NetEaseNews]     = @"NetEaseTabBarViewController",
+    [kApp_SinaNews]        = @"SinaNewsTabBarViewController",
+    [kApp_SinaVideo]       = @"SinaVideoTabBartViewController",
+    [kApp_Secret]          = @"SecretFirstViewController",
+    [kApp_DrawPictures]    = @"DrawPictureViewController",
+    [kApp_Note]            = @"NoteLockViewController",
+    [kApp_QRCode]          = @"QRHeadViewController",
+};
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     NSData *data = [NSData dataWithContentsOfFile:HOMEIMAGEPATH];
@@ -75,7 +90,7 @@
 
 - (void)intoVC:(NSInteger)tag{
     UIViewController *vc = nil;
-    NSString *className = [self className:tag - 100];
+    NSString *className = AppNameVC[tag];
     if (tag < kApp_Secret) {
         vc = [[NSClassFromString(className) alloc] init];
     }else{
@@ -89,10 +104,6 @@
     [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
-- (NSString *)className:(NSInteger)tag{
-    NSArray *classArray = [[NSArray alloc]initWithObjects:@"ContentTabBarViewController",@"GifShowTabBarViewController",@"BuDeJieTabBarViewController",@"WalfareTabBarViewController",@"UCNewsTabBarViewController",@"NetEaseTabBarViewController",@"SinaNewsTabBarViewController",@"SinaVideoTabBartViewController",@"SecretFirstViewController",@"DrawPictureViewController",@"NoteLockViewController",@"QRHeadViewController", nil];
-    return classArray[tag];
-}
 #pragma mark - UIViewControllerPreviewingDelegate
 - (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location{
     UIViewController *vc = nil;
