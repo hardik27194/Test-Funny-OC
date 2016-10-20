@@ -55,7 +55,7 @@
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     //不刷新
-    completionHandler(NCUpdateResultNoData);
+    completionHandler(NCUpdateResultNewData);
     //completionHandler(NCUpdateResultNewData);
 }
 #pragma mark - UI
@@ -128,7 +128,7 @@
         speed = [NSString stringWithFormat:@"%.1fG/s",received / GB];
     }else if (received >= MB){
         speed = [NSString stringWithFormat:@"%.1fM/s",received / MB];
-    }else if (received >= MB){
+    }else if (received >= KB){
         speed = [NSString stringWithFormat:@"%.1fKB/s",received / KB];
     }else{
         speed = [NSString stringWithFormat:@"%.0fB/s",received];
@@ -145,4 +145,9 @@
     }];
 }
 
+-(void)dealloc{
+    [_timer invalidate];
+    [_cpu stopMonitorCPUUsage];
+    [_network stopMonitorNetWork];
+}
 @end
