@@ -29,6 +29,19 @@
 #pragma mark - 1
     //可以设置是否支持折叠
     self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
+
+#pragma mark - App Group
+//    //数据共享方式之一
+//    NSUserDefaults *ud = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.v2tech.BCYZ"];
+//    [ud setValue:@"TEST" forKey:@"BCYZ"];
+//    [ud synchronize];
+//    
+//    //数据共享方式之二
+//    NSURL *url = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.v2tech.BCYZ"];
+//    NSString *path = [url.path stringByAppendingPathComponent:@"gif.png"];
+//    NSData *data = UIImagePNGRepresentation([UIImage imageNamed:@"gifShow"]);
+//    [data writeToFile:path atomically:YES];
+    
     [self configUI];
 }
 
@@ -139,7 +152,7 @@
 
 - (void)extensionButtonAction:(ExtensionButton *)btn{
     //设置主干工程 URL Schemes
-    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"BCYZ://%ld",btn.tag]];
+    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"BCYZ://%ld",(long)btn.tag]];
     [self.extensionContext openURL:url completionHandler:^(BOOL success) {
         
     }];

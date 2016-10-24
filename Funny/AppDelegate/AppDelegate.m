@@ -94,7 +94,7 @@
             
             NSInteger tag = tagString.integerValue;
             if (tag == 102) {
-                tag = 110;
+                tag = 108;
             }
             [vc selectedBtn:tag];
         }else{

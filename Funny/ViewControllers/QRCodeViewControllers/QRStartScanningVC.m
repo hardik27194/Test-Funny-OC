@@ -83,7 +83,7 @@
         if (!_is3DTouch) {
             [_scanVC scanningDone:obj.stringValue];
         }else{
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:obj.stringValue]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:obj.stringValue] options:@{} completionHandler:nil];
         }
     }
     

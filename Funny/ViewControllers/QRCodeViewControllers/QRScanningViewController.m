@@ -26,7 +26,7 @@
     if (self.textView.text.length<=0) {
         return;
     }
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.textView.text]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.textView.text] options:@{} completionHandler:nil];
 }
 
 - (IBAction)scanningAction:(id)sender {

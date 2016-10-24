@@ -63,7 +63,7 @@ static const CGFloat SETTINGS_SECTIONHEIGHTERH = 10.0;
     NSArray *array = @[UIApplicationOpenSettingsURLString];
     NSURL *url = [NSURL URLWithString:array[indexPath.section]];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[UIApplication sharedApplication] openURL:url];
+        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
     }
 
 }

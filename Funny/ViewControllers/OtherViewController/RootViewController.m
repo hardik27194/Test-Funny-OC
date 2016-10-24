@@ -28,8 +28,6 @@ static NSString *AppNameVC[] = {
     [kApp_Walfare]         = @"WalfareTabBarViewController",
     [kApp_UCNews]          = @"UCNewsTabBarViewController",
     [kApp_NetEaseNews]     = @"NetEaseTabBarViewController",
-    [kApp_SinaNews]        = @"SinaNewsTabBarViewController",
-    [kApp_SinaVideo]       = @"SinaVideoTabBartViewController",
     [kApp_Secret]          = @"SecretFirstViewController",
     [kApp_DrawPictures]    = @"DrawPictureViewController",
     [kApp_Note]            = @"NoteLockViewController",
@@ -144,14 +142,14 @@ static NSString *AppNameVC[] = {
 
 -(NSArray *)titleArray{
     if (!_titleArray) {
-         _titleArray=[[NSArray alloc] initWithObjects:@"内涵段子",@"快手",@"不得姐",@"福利社",@"UC新闻",@"网易新闻",@"新浪新闻",@"新浪视频",@"Area",@"画图",@"Note",@"二维码", nil];
+         _titleArray=[[NSArray alloc] initWithObjects:@"内涵段子",@"快手",@"不得姐",@"福利社",@"UC新闻",@"网易新闻",@"Area",@"画图",@"Note",@"二维码", nil];
     }
     return _titleArray;
 }
 
 -(NSArray *)imagesNameArray{
     if (!_imagesNameArray) {
-        _imagesNameArray=[[NSArray alloc]initWithObjects:@"content",@"gifShow",@"budejie",@"walfare",@"uc",@"netease",@"sina",@"sina",@"secret",@"drawPicture",@"note",@"QR", nil];
+        _imagesNameArray=[[NSArray alloc]initWithObjects:@"content",@"gifShow",@"budejie",@"walfare",@"uc",@"netease",@"secret",@"drawPicture",@"note",@"QR", nil];
     }
     return _imagesNameArray;
 }

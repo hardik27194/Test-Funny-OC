@@ -40,7 +40,7 @@
     UINavigationController *nvc2 = block(@[@"NetEaseSuperViewController",@"原创",@"weibo_compose",NetEaseOriginalDefaultURL,NetEaseOriginalPushURL,@"T1370583240249"]);
     UINavigationController *nvc3 = block(@[@"NetEaseSuperViewController",@"娱乐",@"weibo_message",NetEasePlayDefaultURL,NetEasePlayPushURL,@"T1348648517839"]);
     UINavigationController *nvc4 = block(@[@"NetEaseContentViewController",@"段子",@"weibo_music",NetEaseContentDefaultURL,NetEaseContentPushURL,@""]);
-    UINavigationController *nvc5 = block(@[@"NetEaseSuperViewController",@"体育子",@"weibo_favorite",NetEaseSportDefaultURL,NetEaseSportPushURL,@"T1348649079062"]);
+    UINavigationController *nvc5 = block(@[@"NetEaseSuperViewController",@"体育",@"weibo_favorite",NetEaseSportDefaultURL,NetEaseSportPushURL,@"T1348649079062"]);
     NSArray *viewControllers=@[nvc1,nvc2,nvc3,nvc4,nvc5];
     self.viewControllers=viewControllers;
 }

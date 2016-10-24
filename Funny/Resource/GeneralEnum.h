@@ -16,8 +16,6 @@ typedef enum {
     kApp_Walfare,
     kApp_UCNews,
     kApp_NetEaseNews,
-    kApp_SinaNews,
-    kApp_SinaVideo,
     kApp_Secret,
     kApp_DrawPictures,
     kApp_Note,
