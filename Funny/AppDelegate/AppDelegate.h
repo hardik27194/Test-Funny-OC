@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Reachability.h"
 
 #define SharedAppDelegate (AppDelegate*)([UIApplication sharedApplication].delegate)
 
@@ -17,6 +16,5 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) VideoWindow *videoWindow;
 
-- (NetworkStatus)netStatus;
 @end
 

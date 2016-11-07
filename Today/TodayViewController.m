@@ -11,6 +11,7 @@
 #import <YZIPhoneDevice/YZIPhoneDevice.h>
 #import "ExtensionButton.h"
 #import "YZCircleView.h"
+#import <FunnyKit/FunnyKit.h>
 
 @interface TodayViewController () <NCWidgetProviding>
 @property (nonatomic, strong) YZNetwork *network;
@@ -31,11 +32,16 @@
     self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
 
 #pragma mark - App Group
+#pragma mark - Framework
 //    //数据共享方式之一
-//    NSUserDefaults *ud = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.v2tech.BCYZ"];
-//    [ud setValue:@"TEST" forKey:@"BCYZ"];
-//    [ud synchronize];
-//    
+    //仅做测试使用
+    FunnyDeviceTest *device = [[FunnyDeviceTest alloc] init];
+    device.title = @"Y&Z Area";
+    
+    NSUserDefaults *ud = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.v2tech.BCYZ"];
+    [ud setValue:device.title forKey:@"BCYZ"];
+    [ud synchronize];
+//
 //    //数据共享方式之二
 //    NSURL *url = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.v2tech.BCYZ"];
 //    NSString *path = [url.path stringByAppendingPathComponent:@"gif.png"];

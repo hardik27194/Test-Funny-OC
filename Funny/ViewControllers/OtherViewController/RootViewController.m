@@ -10,6 +10,7 @@
 #import "FunnyDeclareViewController.h"
 #import "IconButton.h"
 #import <YZUIKit/YZTransition.h>
+#import <FunnyKit/FunnyKit.h>
 
 @interface RootViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIViewControllerPreviewingDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -51,7 +52,13 @@ static NSString *AppNameVC[] = {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title=@"Y&Z Area";
+    
+    
+    FunnyDeviceTest *device = [[FunnyDeviceTest alloc] init];
+    NSUserDefaults *ud = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.v2tech.BCYZ"];
+    device.title = [ud objectForKey:@"BCYZ"];
+    self.title = device.title;
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self configUI];
     [self registerForPreviewingWithDelegate:self sourceView:self.view];

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
-#import "Reachability.h"
+#import "AFNetworking.h"
 #import "SDWebImageManager.h"
 #import "QRScanningViewController.h"
 #import "QRStartScanningVC.h"
@@ -16,11 +16,31 @@
 #import "WXApi.h"
 
 @interface AppDelegate ()
-@property (strong ,nonatomic) Reachability *reachability;
+
 @end
 
 @implementation AppDelegate
 
+void FunnyUncaughtExceptionHandler(NSException *exception){
+    NSString *document = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSString *path = [document stringByAppendingPathComponent:@"FunnyCrash.log"];
+    //时间
+    NSDateFormatter *format=[[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateString = [format stringFromDate:[NSDate date]];
+    [dateString writeLogToFile:path];
+    //崩溃的名称
+    NSString *crashName = [NSString stringWithFormat:@"Crash name  :*** - %@",exception.name];
+    [crashName writeLogToFile:path];
+    //崩溃的原因
+    NSString *crashReason = [NSString stringWithFormat:@"Crash reason:%@",exception.reason];
+    [crashReason writeLogToFile:path];
+    //崩溃的详情信息
+    [@"Crash info:" writeLogToFile:path];
+    for (NSString *info in exception.callStackSymbols) {
+        [info writeLogToFile:path];
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -34,14 +54,16 @@
     self.videoWindow.backgroundColor = [UIColor clearColor];
     self.videoWindow.windowLevel = UIWindowLevelAlert + 1;
     
+    NSSetUncaughtExceptionHandler(&FunnyUncaughtExceptionHandler);
     //test gitHub
     //[MAMapServices sharedServices].apiKey=aMapKey;
     UINavigationBar *appearance = [UINavigationBar appearance];
     [appearance setTitleTextAttributes:@{NSForegroundColorAttributeName:YZColor(255, 133, 25)}];
     [appearance setTintColor:YZColor(255, 133, 25)];
     
-    _reachability=[Reachability reachabilityForInternetConnection];
-    [_reachability startNotifier];
+//    _reachability=[Reachability reachabilityForInternetConnection];
+//    [_reachability startNotifier];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     
     UIApplicationShortcutItem *shortItem1 = [[UIApplicationShortcutItem alloc] initWithType:@"扫描二维码" localizedTitle:@"扫描二维码"];
@@ -73,10 +95,10 @@
     }
 }
 
-- (NetworkStatus)netStatus
-{
-    return [_reachability currentReachabilityStatus];
-}
+//- (NetworkStatus)netStatus
+//{
+//    return [_reachability currentReachabilityStatus];
+//}
 
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
     if ([url.scheme isEqualToString:@"BCYZ"]) {

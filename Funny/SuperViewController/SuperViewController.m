@@ -9,7 +9,7 @@
 #import "SuperViewController.h"
 #import <AudioToolbox/AudioServices.h>
 #import "AboutMyViewController.h"
-#import "Reachability.h"
+#import "AFNetworking.h"
 #import "AppDelegate.h"
 #import "MBProgressHUD+YZZ.h"
 
@@ -32,8 +32,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netStatusChange) name:kReachabilityChangedNotification object:nil];
+    
     [self superAboutMy];
+    [self netStatusChange];
 }
 
 - (void)superAboutMy{
@@ -55,13 +56,15 @@
 }
 - (void)netStatusChange
 {
-    if ([SharedAppDelegate netStatus] != ReachableViaWiFi) {
-        //self.superWarningLabel.hidden=NO;
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-        MBProgressHUD *hud=[MBProgressHUD showMessage:@"WIFI中断,请退出程序" toView:self.navigationController.view];
-        hud.labelColor=[UIColor redColor];
-        [hud hide:YES afterDelay:2.0f];
-    }
+    YZWeakSelf(self)
+    [[NSNotificationCenter defaultCenter] addObserverForName:AFNetworkingReachabilityDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        if ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus != AFNetworkReachabilityStatusReachableViaWiFi) {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+            MBProgressHUD *hud=[MBProgressHUD showMessage:@"WIFI中断,请退出程序" toView:weakself.navigationController.view];
+            hud.labelColor=[UIColor redColor];
+            [hud hide:YES afterDelay:2.0f];
+        }
+    }];
 }
 - (void)becomeBlack
 {
