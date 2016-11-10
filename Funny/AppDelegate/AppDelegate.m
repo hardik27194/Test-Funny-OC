@@ -28,18 +28,20 @@ void FunnyUncaughtExceptionHandler(NSException *exception){
     NSDateFormatter *format=[[NSDateFormatter alloc] init];
     [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString *dateString = [format stringFromDate:[NSDate date]];
+    dateString = [NSString stringWithFormat:@"Crash time    :*** -%@",dateString];
     [dateString writeLogToFile:path];
     //崩溃的名称
-    NSString *crashName = [NSString stringWithFormat:@"Crash name  :*** - %@",exception.name];
+    NSString *crashName = [NSString stringWithFormat:@"Crash name  :*** -%@",exception.name];
     [crashName writeLogToFile:path];
     //崩溃的原因
     NSString *crashReason = [NSString stringWithFormat:@"Crash reason:%@",exception.reason];
     [crashReason writeLogToFile:path];
     //崩溃的详情信息
     [@"Crash info:" writeLogToFile:path];
-    for (NSString *info in exception.callStackSymbols) {
-        [info writeLogToFile:path];
-    }
+    [exception.callStackSymbols enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj writeLogToFile:path];
+    }];
+    NSLog(@"TTTT:%@",path);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

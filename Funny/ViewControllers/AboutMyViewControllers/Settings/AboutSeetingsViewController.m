@@ -7,6 +7,7 @@
 //
 
 #import "AboutSeetingsViewController.h"
+#import "FunnyCrashViewController.h"
 
 static const CGFloat SETTINGS_ROWHEIGHT = 50.0;
 static const CGFloat SETTINGS_SECTIONHEIGHTERH = 10.0;
@@ -22,7 +23,7 @@ static const CGFloat SETTINGS_SECTIONHEIGHTERH = 10.0;
     self.tableView.rowHeight = SETTINGS_ROWHEIGHT;
     self.tableView.backgroundColor = YZColor(230, 230, 237);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    NSArray *items = @[@[@"隐私设置"]];
+    NSArray *items = @[@[@"隐私设置"],@[@"Crash Log"]];
     [self.dataSource addObjectsFromArray:items];
 }
 #pragma mark - TableView
@@ -60,12 +61,16 @@ static const CGFloat SETTINGS_SECTIONHEIGHTERH = 10.0;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     //@"prefs:root=WIFI",@"prefs:root=MOBILE_DATA_SETTINGS_ID"
-    NSArray *array = @[UIApplicationOpenSettingsURLString];
-    NSURL *url = [NSURL URLWithString:array[indexPath.section]];
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+    if (indexPath.section == 0) {
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+        }
+    }else if (1 == indexPath.section) {
+        FunnyCrashViewController *vc = [[FunnyCrashViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
-
+    
 }
 
 @end

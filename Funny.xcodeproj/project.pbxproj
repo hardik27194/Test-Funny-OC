@@ -32,6 +32,8 @@
 		9B4116B51DADCA8E0058B895 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4116B41DADCA8E0058B895 /* TodayViewController.m */; };
 		9B4116BC1DADCA8E0058B895 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B4116AE1DADCA8D0058B895 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9B4116C31DADCADA0058B895 /* ExtensionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4116C21DADCADA0058B895 /* ExtensionButton.m */; };
+		9B440B751DD4723A0072FEDA /* FunnyCrashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B440B731DD4723A0072FEDA /* FunnyCrashViewController.m */; };
+		9B440B761DD4723A0072FEDA /* FunnyCrashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B440B741DD4723A0072FEDA /* FunnyCrashViewController.xib */; };
 		9B49AA3F1D1A7E0E00D3A1A6 /* SuperTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B49AA3E1D1A7E0E00D3A1A6 /* SuperTabBarViewController.m */; };
 		9B6D8BD81D3761CE001976BE /* ContentMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6D8BD71D3761CE001976BE /* ContentMacro.m */; };
 		9B6D8BDB1D376500001976BE /* GifShowMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6D8BDA1D376500001976BE /* GifShowMacro.m */; };
@@ -307,6 +309,9 @@
 		9B4116B91DADCA8E0058B895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B4116C11DADCADA0058B895 /* ExtensionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionButton.h; sourceTree = "<group>"; };
 		9B4116C21DADCADA0058B895 /* ExtensionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensionButton.m; sourceTree = "<group>"; };
+		9B440B721DD4723A0072FEDA /* FunnyCrashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunnyCrashViewController.h; sourceTree = "<group>"; };
+		9B440B731DD4723A0072FEDA /* FunnyCrashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunnyCrashViewController.m; sourceTree = "<group>"; };
+		9B440B741DD4723A0072FEDA /* FunnyCrashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FunnyCrashViewController.xib; sourceTree = "<group>"; };
 		9B49AA3D1D1A7E0E00D3A1A6 /* SuperTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperTabBarViewController.h; sourceTree = "<group>"; };
 		9B49AA3E1D1A7E0E00D3A1A6 /* SuperTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperTabBarViewController.m; sourceTree = "<group>"; };
 		9B6D8BD61D3761CE001976BE /* ContentMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentMacro.h; sourceTree = "<group>"; };
@@ -697,6 +702,9 @@
 			children = (
 				9B1F8BA41D828AE90047A1CB /* AboutSeetingsViewController.h */,
 				9B1F8BA51D828AE90047A1CB /* AboutSeetingsViewController.m */,
+				9B440B721DD4723A0072FEDA /* FunnyCrashViewController.h */,
+				9B440B731DD4723A0072FEDA /* FunnyCrashViewController.m */,
+				9B440B741DD4723A0072FEDA /* FunnyCrashViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1610,6 +1618,7 @@
 				9BCE58131D0284DA00B976DF /* QRScanningViewController.xib in Resources */,
 				9BCE57E11D0284DA00B976DF /* AboutMyDeclareViewController.xib in Resources */,
 				9BCE580F1D0284DA00B976DF /* QRHeadViewController.xib in Resources */,
+				9B440B761DD4723A0072FEDA /* FunnyCrashViewController.xib in Resources */,
 				9BCE581A1D0284DA00B976DF /* SecretLockViewController.xib in Resources */,
 				9BCE58081D0284DA00B976DF /* NoteShowViewController.xib in Resources */,
 				9BCE584C1D0284DA00B976DF /* NEPictureTableViewCell.xib in Resources */,
@@ -1788,6 +1797,7 @@
 				9BCE58091D0284DA00B976DF /* NoteWriteViewController.m in Sources */,
 				9BCE58361D0284DA00B976DF /* WalfareVideoViewController.m in Sources */,
 				9B76CF021D06727500462F37 /* AFNetworkReachabilityManager.m in Sources */,
+				9B440B751DD4723A0072FEDA /* FunnyCrashViewController.m in Sources */,
 				9B86C08A1D4AF97500F29B35 /* WindowLoadingView.m in Sources */,
 				9BCE583D1D0284DA00B976DF /* ContentVideoTableViewCell1.m in Sources */,
 				9BCE57FC1D0284DA00B976DF /* GifShowViewController.m in Sources */,
